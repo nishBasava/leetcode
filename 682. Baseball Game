@@ -1,0 +1,20 @@
+class Solution(object):
+    def calPoints(self, operations):
+        """
+        :type operations: List[str]
+        :rtype: int
+        """
+        
+        stack = []
+
+        for action in operations:
+            if action == "+":
+                stack.append(stack[-1] + stack[-2])
+            elif action == "D":
+                stack.append(stack[-1] * 2)
+            elif action == "C":
+                stack.pop()
+            else: #int(action)
+                stack.append(int(action))
+
+        return sum(stack)
