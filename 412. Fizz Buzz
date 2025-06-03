@@ -1,0 +1,20 @@
+class Solution(object):
+    def fizzBuzz(self, n):
+        """
+        :type n: int
+        :rtype: List[str]
+        """
+
+        stack = []
+
+        for i in range(n):
+            if (i+1) % 15 == 0:
+                stack.append("FizzBuzz")
+            elif (i+1) % 5 == 0:
+                stack.append("Buzz")
+            elif (i+1) % 3 == 0:
+                stack.append("Fizz")
+            else: #none of conditions are true
+                stack.append(str(i+1))
+
+        return stack
